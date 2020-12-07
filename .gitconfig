@@ -3,3 +3,10 @@
 # Please adapt and uncomment the following lines:
 name = juliabirkett
 email = juliambirkett@gmail.com
+[color "diff"]
+  meta = yellow
+  old = red bold
+  new = green bold
+  context = white
+  frag = cyan
+  func = cyan bold
