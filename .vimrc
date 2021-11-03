@@ -23,7 +23,7 @@ call minpac#add('thoughtbot/vim-rspec')
 " Dispatch
 call minpac#add('tpope/vim-dispatch')
 " Neodark colorscheme
-call minpac#add('KeitaNakamura/neodark.vim')
+call minpac#add('NLKNguyen/papercolor-theme')
 " Fzf
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
@@ -164,6 +164,6 @@ set mat=5       " Bracket blinking.
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 " Colorscheme configs
-colorscheme neodark
-let g:neodark#background = '#000000'
-let g:neodark#use_256color = 1
+set t_Co=256
+set background=light
+colorscheme PaperColor
