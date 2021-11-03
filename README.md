@@ -27,4 +27,4 @@ For further details, please refer to this [Atlassian's link](https://www.atlassi
 1. Install [minpac](https://github.com/k-takata/minpac) (package manager).
 2. Open `vim`.
 3. Type `:PackUpdate` or `:PackInstall`.
-4. To make vim's finder work (mapped to Super + f), install `fzf` and `ripgrep`: `brew install fzf ripgrep`.
+4. To make vim's finder work (mapped to Super + f), install `fzf` and `ripgrep`: `brew install fzf ripgrep`. [This](https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko) can be useful to use the finder.
