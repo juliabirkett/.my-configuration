@@ -23,8 +23,17 @@ For further details, please refer to this [Atlassian's link](https://www.atlassi
 ### Tmux
 `brew install tmux`
 
+### Delta (pretty git diffs)
+`brew install git-delta` 
+
 ### Vim
 1. Install [minpac](https://github.com/k-takata/minpac) (package manager).
 2. Open `vim`.
-3. Type `:PackUpdate` or `:PackInstall`.
-4. To make vim's finder work (mapped to Super + f), install `fzf` and `ripgrep`: `brew install fzf ripgrep`. [This](https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko) can be useful to use the finder.
+3. Type `:PackUpdate`.
+4. To make vim's finder work, install `fzf` and `ripgrep`: `brew install fzf ripgrep`. [This](https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko) can help using the finder.
+
+---
+
+Running Python tests with `vim-test` without showing huge logs (workaround):
+1. `vim ~/.vim/pack/minpac/start/vim-test/autoload/test/python/pytest.vim`
+2. Add `--show-capture=no` to [this line.](https://github.com/vim-test/vim-test/blob/master/autoload/test/python/pytest.vim#L52)
