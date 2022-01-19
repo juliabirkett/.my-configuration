@@ -23,19 +23,15 @@ Holds my dotfiles configurations files :)
 
 For further details, please refer to this [Atlassian's link](https://www.atlassian.com/git/tutorials/dotfiles) that inspired me (I hope it still exists).
 
-## Installation
+## Tools installation
 
-### Tmux
-`brew install tmux`
-
-### Delta (pretty git diffs)
-`brew install git-delta` 
+`brew install tmux git-delta fzf ripgrep`
 
 ### Vim
 1. Install [minpac](https://github.com/k-takata/minpac) (package manager).
 2. Open `vim`.
 3. Type `:PackUpdate`.
-4. To make vim's finder work, install `fzf` and `ripgrep`: `brew install fzf ripgrep`. [This](https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko) can help using the finder.
+4. To search files inside vim, [this](https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko) can be useful.
 
 ---
 
