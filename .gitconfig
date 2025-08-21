@@ -3,6 +3,7 @@
 # Please adapt and uncomment the following lines:
 name = Júlia Birkett
 email = juliabirkett@users.noreply.github.com
+	signingkey = /Users/jbr8667/.ssh/id_ed25519
 
 [pull]
 	rebase = true
@@ -45,3 +46,11 @@ email = juliabirkett@users.noreply.github.com
 
 [include]
     path = ~/.themes.gitconfig
+[core]
+	autocrlf = input
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /Users/jbr8667/.config/git/allowed_signers

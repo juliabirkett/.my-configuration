@@ -2,17 +2,30 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export NODE_EXTRA_CA_CERTS=~/Documents/zscaler.pem
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+# Python setup
+if [[ -x "$(command -v pyenv)" ]]; then
+  export PATH="$PATH:$(pyenv root)/shims"
+else
+  if [[ -x "$(brew --prefix)/opt/python" ]]; then
+    export PATH="$PATH:$(brew --prefix)/opt/python/libexec/bin"
+  fi
+fi
 
-# asdf setup
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/plugins/java/set-java-home.bash
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+if vault --version >/dev/null 2>&1; then
+    if vault kv get springernature/shared/artifactory >/dev/null 2>&1; then
+        echo 'Loading ARTIFACTORY crap'
+        export ARTIFACTORY_URL=$(vault kv get -field=url springernature/shared/artifactory)
+        export ARTIFACTORY_USERNAME=$(vault kv get -field=username springernature/shared/artifactory)
+        export ARTIFACTORY_PASSWORD=$(vault kv get -field=password springernature/shared/artifactory)
+    fi
+fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -113,9 +126,17 @@ export FZF_DEFAULT_OPTS='--reverse --border'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+export VAULT_ADDR=https://vault.halfpipe.io
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Applications/google-cloud-sdk/path.zsh.inc' ]; then . '/Applications/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/jbr8667/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jbr8667/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Applications/google-cloud-sdk/completion.zsh.inc' ]; then . '/Applications/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/jbr8667/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jbr8667/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
