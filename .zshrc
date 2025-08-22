@@ -29,7 +29,7 @@ fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
-ZSH_THEME="steeef"
+ZSH_THEME="purity"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -84,6 +84,10 @@ plugins=(git bundler osx rake ruby)
 
 source $ZSH/oh-my-zsh.sh
 
+# .zshrc purity theme
+autoload -U promptinit && promptinit
+prompt purity
+#
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -140,3 +144,7 @@ if [ -f '/Users/jbr8667/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jbr8667
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jbr8667/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jbr8667/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/plugins/java/set-java-home.zsh
