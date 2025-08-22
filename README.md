@@ -8,7 +8,7 @@ Holds my dotfiles configurations files :)
 2. Clone this bare repository to your new computer.
 > $ git clone --bare git@github.com:juliabirkett/.my-configuration.git $HOME/.my-configuration
 
-3. Define the alias in the current shell. This alias is defined in `.zshrc` defined as [dotfiles_config](https://github.com/juliabirkett/.my-configuration/blob/master/.zshrc#L97) to refer to your bare repository.
+3. Define the alias in the current shell. This alias is set in `.zshrc` named as [dotfiles_config](https://github.com/juliabirkett/.my-configuration/blob/master/.zshrc#L97) to refer to your bare repository.
 
 > $ alias dotfiles_config='/usr/bin/git --git-dir=$HOME/.my-configuration/ --work-tree=$HOME'
  
