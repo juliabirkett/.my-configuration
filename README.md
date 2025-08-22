@@ -33,6 +33,13 @@ For further details, please refer to this [Atlassian's link](https://www.atlassi
 3. Type `:PackUpdate`.
 4. To search files inside vim, [this](https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko) can be useful.
 
+### Purity zsh theme
+1. Install it
+   > npm install --global purity-prompt
+2. Add a symlink (can change if you're using nvm or brew to handle node versions)
+   > ln -s ~/.asdf/installs/nodejs/20.17.0/lib/node_modules/purity-prompt/purity.zsh ~/.oh-my-zsh/custom/purity.zsh-theme
+3. > source ~/.zshrc
+4. Done!
 ---
 
 Running Python tests with `vim-test` without showing huge logs (workaround):
